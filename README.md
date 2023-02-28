@@ -5,4 +5,5 @@ Utilizando a API de Open trivia do exercicio anterior. Crea un minixogo de tipo 
 Entregables:
 
 Rama da entrega extra do repo
+
 Captura
