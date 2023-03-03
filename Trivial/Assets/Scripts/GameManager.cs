@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        StartCoroutine(GetRequest("https://opentdb.com/api.php?amount=10&category=15"));
+        StartCoroutine(GetRequest($"https://opentdb.com/api.php?amount={pregunta}"));
     }
 
     IEnumerator GetRequest(string uri) {
