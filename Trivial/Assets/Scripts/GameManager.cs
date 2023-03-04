@@ -5,18 +5,15 @@ using UnityEngine.Networking;
 
 public class GameManager : MonoBehaviour {
 
-    private Preguntas preguntas;
+    public Preguntas preguntas;
 
-    public GameObject pregunta;
+    public int numPregunta;
 
-    public GameObject respuesta1;
-    public GameObject respuesta2;
-    public GameObject respuesta3;
-    public GameObject respuesta4;
+    //public GameObject pregunta;
 
     // Start is called before the first frame update
     void Start() {
-        StartCoroutine(GetRequest($"https://opentdb.com/api.php?amount={pregunta}"));
+        StartCoroutine(GetRequest("https://opentdb.com/api.php?amount=5"));
     }
 
     IEnumerator GetRequest(string uri) {
@@ -29,12 +26,18 @@ public class GameManager : MonoBehaviour {
 
             switch (webRequest.result){
                 case UnityWebRequest.Result.Success:
-
-                preguntas = JsonUtility.FromJson<Preguntas>(webRequest.downloadHandler.text);
                 break;
             }
+
+                preguntas = JsonUtility.FromJson<Preguntas>(webRequest.downloadHandler.text);
+            }
+            
+        }
+        public Preguntas getJSON(){
+            return preguntas;
+            
         }
     }
 
    
-}
+

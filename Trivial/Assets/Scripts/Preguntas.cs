@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-//[Serializable]
+[Serializable]
 public class Preguntas {
 
     public int response_code;
